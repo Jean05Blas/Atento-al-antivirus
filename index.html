@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huaraz 2077 - Terminal</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #00ff41;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #1e1e1e;
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+        h1 {
+            color: #00ff41;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        .terminal-link {
+            display: inline-block;
+            background-color: #00ff41;
+            color: #0a0a0a;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .terminal-link:hover {
+            background-color: #00cc33;
+            transform: scale(1.05);
+        }
+        .info {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #00cc33;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Huaraz 2077</h1>
+        <p>Bienvenido al Sistema de Terminal Neurocibernético</p>
+        <p>Acceso autorizado solo para personal de alta seguridad</p>
+        <a href="terminal.php" class="terminal-link">Iniciar Sesión</a>
+        <div class="info">
+            <p>Estado del Sistema: Operativo</p>
+            <p>Último Acceso: 15/11/2077 - 22:45:33</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple terminal-style typing effect
+        const text = document.querySelector('p');
+        text.innerHTML = text.textContent.split('').map(char => 
+            `<span style="opacity: 0;">${char}</span>`
+        ).join('');
+
+        text.querySelectorAll('span').forEach((span, i) => {
+            setTimeout(() => {
+                span.style.opacity = '1';
+            }, 50 * i);
+        });
+    </script>
+</body>
+</html>
